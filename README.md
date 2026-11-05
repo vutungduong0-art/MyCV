@@ -1,7 +1,10 @@
 # 🌐 Personal Portfolio CV – Vũ Tùng Dương
 
-> **Trang web Portfolio CV cá nhân chuyên nghiệp, tối ưu chuẩn Mobile-First, giao diện hiện đại và thân thiện với người dùng.**
+> **Trang web Portfolio CV cá nhân chuyên nghiệp, tối ưu chuẩn Mobile-First, giao diện hiện đại và thân thiện với người dùng.**  
+> 🔗 **Live Demo (GitHub Pages)**: [https://vutungduong0-art.github.io/MyCV/](https://vutungduong0-art.github.io/MyCV/)  
+> 📦 **GitHub Repository**: [https://github.com/vutungduong0-art/MyCV](https://github.com/vutungduong0-art/MyCV)
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?style=for-the-badge&logo=github)](https://vutungduong0-art.github.io/MyCV/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Responsive](https://img.shields.io/badge/Responsive-Mobile--First-green?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
@@ -71,7 +74,9 @@ KT A2.1/
 │       ├── Avatar_VuTungDuong.jpg   # Ảnh chân dung đại diện
 │       └── Website_Fast_Food.png    # Ảnh dự án FastFood Website
 ├── docs/
-│   └── RELEASENOTE.md               # Nhật ký phát hành và cập nhật qua các phiên bản
+│   ├── AI_LOG.md                    # Nhật ký hoạt động và quyết định kỹ thuật của AI
+│   ├── RELEASENOTE.md               # Nhật ký phát hành và cập nhật qua các phiên bản
+│   └── test_report.md               # Báo cáo kiểm thử chất lượng sản phẩm trước bàn giao
 ├── Dockerfile                       # Tệp cấu hình Docker (Nginx Alpine)
 ├── docker-compose.yml               # Tệp triển khai nhanh với Docker Compose
 ├── .dockerignore                    # Tệp loại trừ khi đóng gói Docker
@@ -117,8 +122,8 @@ Bạn có thể tải dự án bằng một trong hai cách sau:
 #### Cách A: Sử dụng Git (khuyên dùng)
 Mở cửa sổ dòng lệnh (Terminal / Command Prompt / PowerShell) và gõ lệnh:
 ```bash
-git clone https://github.com/vutungduong0-art/Portfolio-CV.git
-cd "Portfolio-CV"
+git clone https://github.com/vutungduong0-art/MyCV.git
+cd "MyCV"
 ```
 
 #### Cách B: Tải trực tiếp file ZIP
