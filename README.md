@@ -70,6 +70,8 @@ KT A2.1/
 │       ├── AI_Space_Defender.jpg    # Ảnh dự án AI Space Defender
 │       ├── Avatar_VuTungDuong.jpg   # Ảnh chân dung đại diện
 │       └── Website_Fast_Food.png    # Ảnh dự án FastFood Website
+├── docs/
+│   └── RELEASENOTE.md               # Nhật ký phát hành và cập nhật qua các phiên bản
 ├── Dockerfile                       # Tệp cấu hình Docker (Nginx Alpine)
 ├── docker-compose.yml               # Tệp triển khai nhanh với Docker Compose
 ├── .dockerignore                    # Tệp loại trừ khi đóng gói Docker
