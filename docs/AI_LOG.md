@@ -321,6 +321,32 @@ Phải tiến hành cập nhật vào tệp này theo định dạng chuẩn:
 
 ---
 
+### [LOG-015] 2026-11-06 14:55 – Tinh chỉnh Tối giản Cao cấp: Căn giữa Ảnh đại diện, Hợp nhất 1 Theme & Lược bỏ Terminal
+- **Trợ lý thực hiện**: Antigravity (Gemini 3.8 Flash High - Đóng vai trò Senior UI/UX Designer)
+- **Yêu cầu của người dùng**:
+  > *"Developer Interactive Console không cần cái này và 3 màu sắc đâu, làm 1 cái thật đẹp là được rồi nha và căn ảnh tôi ra giữa khung nhé"*
+- **Bối cảnh & Phân tích**:
+  - Người dùng mong muốn tinh gọn giao diện, loại bỏ chức năng Developer Interactive Console để trang web tập trung tối đa vào thông tin chuyên môn của CV cá nhân.
+  - Loại bỏ bộ đổi 3 theme để tập trung kiến tạo **MỘT bảng màu duy nhất (Cyber-Aurora)** đạt độ hoàn thiện cao nhất, sang trọng, tương phản hài hòa và phát huy trọn vẹn nét hiện đại.
+  - Khắc phục triệt để hiển thị ảnh chân dung: Căn chỉnh ảnh đại diện ra chính giữa khung hình, giữ trọn vẹn tỉ lệ ảnh gốc 1706x2560 (tỉ lệ vàng 2:3) thay vì cắt cúp hình vuông gò bó.
+- **Chi tiết các chỉnh sửa đã thực hiện**:
+  1. **Căn giữa ảnh chân dung và tối ưu khung hình (`hero-avatar`)**:
+     - Reset margin cho `<figure class="hero-avatar">` (`margin: 0 auto; display: flex; justify-content: center; align-items: center;`).
+     - Tinh chỉnh `.hero-avatar-wrapper` căn giữa đối xứng với viền xoay hào quang phát sáng `padding: 4px; border-radius: 28px;`.
+     - Cập nhật `.hero-avatar img` sử dụng `aspect-ratio: 2 / 3; object-fit: cover; object-position: center center; display: block; margin: 0 auto;` giúp khuôn mặt được căn chuẩn ngay chính giữa khung hình, không bị biến dạng hay che khuất.
+     - Đồng bộ kích thước hiển thị linh hoạt: Mobile (`max-width: 260px`), Tablet (`max-width: 290px`), Desktop (`max-width: 330px`).
+  2. **Hợp nhất một chủ đề nghệ thuật Cyber-Aurora đỉnh cao**:
+     - Loại bỏ bộ nút đổi theme `.theme-picker` trên Header, dọn dẹp biến thừa trong CSS.
+     - Cố định toàn bộ hệ thống biến trực tiếp vào `:root` với dải màu Deep Cosmic Obsidian (`#070a13`, `#0c1222`), kết hợp gradient cực quang Cyan - Indigo - Violet - Pink và kính mờ Glassmorphism cao cấp.
+  3. **Lược bỏ Developer Interactive Console**:
+     - Xóa Section `#terminal` trong `index.html` và mục liên kết `Terminal` trên menu điều hướng.
+     - Xóa logic xử lý dòng lệnh trong `assets/js/main.js` (`initInteractiveTerminal`) và CSS tương ứng.
+     - Giữ nguyên vẹn các tính năng cao cấp được yêu thích: Popup chi tiết dự án (Project Deep-Dive Modal), âm thanh Sci-Fi Web Audio API, mạng lưới hạt công nghệ Neural Canvas 60fps, 3D Tilt Card, bộ lọc kỹ năng động, sao chép email 1-chạm và form liên hệ nhanh.
+- **Tác động & Rủi ro**: Giao diện trở nên tinh gọn, thanh thoát, tập trung đúng trọng tâm hồ sơ ứng tuyển, tải trang tức thì, 0 lỗi console.
+- **Kiểm thử & Xác minh**: Kiểm tra DOM HTML chuẩn 100% không thẻ thừa, CSS 209/209 cặp ngoặc cân bằng tuyệt đối, JavaScript chạy mượt mà.
+
+---
+
 ## 🔮 HƯỚNG DẪN DÀNH CHO AI TRONG CÁC LẦN CẬP NHẬT TIẾP THEO
 
 Khi người dùng yêu cầu thực hiện bất kỳ thay đổi lớn nào:

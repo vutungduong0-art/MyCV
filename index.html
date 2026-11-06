@@ -38,31 +38,25 @@
         <span class="brand-name">Vũ Tùng Dương</span>
       </a>
 
-      <!-- Bộ điều khiển cao cấp: Themes & Sci-Fi Sound -->
-      <div class="header-controls">
-        <div class="theme-picker" role="toolbar" aria-label="Chọn bảng màu giao diện">
-          <button type="button" class="theme-btn active" data-theme="aurora" title="Cosmic Aurora" aria-label="Chủ đề Cosmic Aurora"></button>
-          <button type="button" class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Neon 2077" aria-label="Chủ đề Cyberpunk Neon"></button>
-          <button type="button" class="theme-btn" data-theme="emerald" title="Emerald Matrix" aria-label="Chủ đề Emerald Matrix"></button>
-        </div>
-
+      <!-- Vùng điều khiển & Điều hướng -->
+      <div class="header-right">
+        <!-- Công tắc âm thanh Sci-Fi Web Audio API -->
         <button type="button" id="soundToggleBtn" class="sound-toggle-btn" aria-pressed="false" title="Bật/Tắt hiệu ứng âm thanh tổng hợp Web Audio API">
           <span class="sound-icon" aria-hidden="true">🔊</span>
           <span class="sound-label">Âm thanh: Tắt</span>
         </button>
-      </div>
 
-      <!-- NAV dùng Flexbox với gạch chân phát sáng -->
-      <nav class="main-nav" aria-label="Điều hướng chính">
-        <ul class="nav-list">
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#timeline">Hành trình</a></li>
-          <li><a href="#skills">Kỹ năng</a></li>
-          <li><a href="#projects">Dự án</a></li>
-          <li><a href="#terminal">Terminal</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-      </nav>
+        <!-- NAV dùng Flexbox với gạch chân phát sáng -->
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <ul class="nav-list">
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#timeline">Hành trình</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -112,11 +106,11 @@
             </div>
           </div>
 
-          <!-- Ảnh đại diện: Viền xoay ánh sáng đa sắc (Conic Gradient) & lơ lửng -->
+          <!-- Ảnh đại diện: Căn giữa khung hình, viền hào quang phát sáng & hiệu ứng lơ lửng -->
           <figure class="hero-avatar">
             <div class="hero-avatar-wrapper">
               <img src="./assets/img/Avatar_VuTungDuong.jpg" alt="Ảnh chân dung của Vũ Tùng Dương" width="320"
-                height="320" />
+                height="480" />
             </div>
           </figure>
         </div>
@@ -366,50 +360,6 @@
           </article>
 
         </div><!-- /.project-grid -->
-      </div>
-    </section>
-
-    <!-- ----- SECTION 5: Developer Interactive CLI Terminal ----- -->
-    <section id="terminal" class="section terminal-section">
-      <div class="container">
-        <h2 class="section-title">Developer Interactive Console</h2>
-        <p class="section-sub">
-          Dành riêng cho Nhà tuyển dụng &amp; Kỹ sư công nghệ: Trải nghiệm môi trường dòng lệnh tương tác trực tiếp ngay trên trình duyệt (100% Vanilla JS).
-        </p>
-
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="terminal-dots" aria-hidden="true">
-              <span class="term-dot dot-red"></span>
-              <span class="term-dot dot-yellow"></span>
-              <span class="term-dot dot-green"></span>
-            </div>
-            <div class="terminal-title">bash — vutungduong@portfolio: ~ (interactive shell)</div>
-          </div>
-          
-          <div class="terminal-body">
-            <div id="terminalOutput" class="terminal-output">
-              <div class="terminal-line"><span class="term-prompt">duong@portfolio:~$</span> system-init --status=active</div>
-              <div class="terminal-line">Chào mừng bạn đến với Terminal Portfolio của <b>Vũ Tùng Dương</b>!</div>
-              <div class="terminal-line">Gõ lệnh vào ô bên dưới hoặc bấm các thẻ gợi ý nhanh (hoặc gõ <span class="cmd-highlight">help</span>) để khám phá.</div>
-            </div>
-            
-            <div class="terminal-input-row">
-              <span class="term-prompt" aria-hidden="true">duong@portfolio:~$</span>
-              <input type="text" id="terminalInput" class="terminal-input" placeholder="Gõ lệnh (help, skills, projects, metrics, sound, clear)..." autocomplete="off" spellcheck="false" aria-label="Nhập lệnh terminal" />
-            </div>
-          </div>
-
-          <div class="terminal-quick-chips" role="toolbar" aria-label="Lệnh gợi ý nhanh">
-            <button type="button" class="term-quick-btn" data-cmd="about">about</button>
-            <button type="button" class="term-quick-btn" data-cmd="skills">skills</button>
-            <button type="button" class="term-quick-btn" data-cmd="projects">projects</button>
-            <button type="button" class="term-quick-btn" data-cmd="metrics">metrics</button>
-            <button type="button" class="term-quick-btn" data-cmd="contact">contact</button>
-            <button type="button" class="term-quick-btn" data-cmd="sound">sound</button>
-            <button type="button" class="term-quick-btn" data-cmd="clear">clear</button>
-          </div>
-        </div>
       </div>
     </section>
 

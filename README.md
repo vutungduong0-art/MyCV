@@ -47,10 +47,10 @@ Dự án được xây dựng với tư duy **Mobile-First**, áp dụng semanti
 
 ## 2. Tính năng nổi bật
 
-- 🎨 **Bộ 3 Theme Đa sắc Cao cấp (Theme Switcher)**: Cho phép chuyển đổi tức thì giữa 3 giao diện nghệ thuật: `Cosmic Aurora` (Mặc định ánh dương vũ trụ), `Cyberpunk Neon 2077` (Vàng & Hồng neon rực rỡ) và `Emerald Matrix` (Xanh ngọc lục bảo công nghệ cao). Ghi nhớ tùy chọn bằng `localStorage`.
+- 🎨 **Giao diện Nghệ thuật Cyber-Aurora Đỉnh cao**: Thiết kế độc quyền với gam màu Deep Cosmic Obsidian kết hợp dải gradient cực quang Cyan - Indigo - Violet - Pink tinh tế, kính mờ Glassmorphism sang trọng và đẳng cấp quốc tế.
+- 👤 **Ảnh Chân dung Căn Chuẩn Tỉ Lệ Vàng (2:3 Ratio)**: Khung viền hào quang phát sáng xoay tròn (Conic Gradient) lơ lửng, bức ảnh được căn chính giữa khung hình, giữ nguyên vẹn tỉ lệ ảnh gốc không bị méo hay cắt cúp khuôn mặt.
 - 🔊 **Âm thanh Sci-Fi Tương tác (Web Audio API)**: Tự động tổng hợp âm thanh vi mô (micro-interactions) theo thời gian thực bằng thuật toán toán học tần số sóng âm (không cần tải file .mp3 từ bên ngoài). Tích hợp công tắc bật/tắt trực quan trên Header.
-- 💻 **Developer Interactive CLI Terminal**: Section console dòng lệnh giả lập Linux/bash chạy trực tiếp trên trình duyệt bằng 100% Vanilla JS, hỗ trợ hơn 8 lệnh shell: `help`, `about`, `skills`, `projects`, `metrics`, `contact`, `theme <name>`, `sound`, `clear` cùng các phím bấm gợi ý nhanh một chạm.
-- 🔍 **Hộp thoại Chi tiết Dự án Chuyên sâu (Project Deep-Dive Modal)**: Khắc phục triệt để liên kết `#` của nút "Xem chi tiết" bằng popup kính mờ hiển thị toàn bộ kiến trúc mô hình, chỉ số kỹ thuật đo lường (IoU 91.4%, Dice 95.8%, 60 FPS, 3NF EF Core), hỗ trợ đóng bằng phím ESC.
+- 🔍 **Hộp thoại Chi tiết Dự án Chuyên sâu (Project Deep-Dive Modal)**: Khắc phục triệt để liên kết `#` của nút "Xem chi tiết" bằng popup kính mờ hiển thị toàn bộ kiến trúc mô hình, chỉ số kỹ thuật đo lường (IoU 91.4%, Dice 95.8%, 60 FPS, 3NF EF Core), hỗ trợ đóng bằng phím ESC hoặc click ra ngoài.
 - 🌌 **Mạng lưới Hạt Công nghệ (Neural Particle Canvas 60fps)**: Canvas vẽ các hạt lượng tử tự do liên kết tia sáng phát quang động theo khoảng cách thực tế, tối ưu hiệu năng không gây giật lag.
 - 🧊 **Vật lý 3D Card Tilt & Phản quang Chuột Spotlight**: Các thẻ dự án, hành trình và liên hệ phản hồi góc nghiêng 3D theo vị trí con trỏ chuột kết hợp vầng sáng radial phát quang nổi bật.
 - 🏷️ **Bộ lọc Danh mục Kỹ năng Tương tác (Skill Filters)**: Lọc động các thẻ chip kỹ năng theo 4 nhóm chuyên môn (AI, Web, Cơ sở dữ liệu, Tất cả) với hiệu ứng animation mượt mà.

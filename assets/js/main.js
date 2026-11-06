@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initTypewriter();
   initAudioEngine();
-  initThemeSwitcher();
   init3DTilt();
   initSkillFilters();
   initProjectModals();
-  initInteractiveTerminal();
   initCopyEmail();
   initContactForm();
   initBackToTop();
@@ -106,31 +104,7 @@ function playSciFiSound(type) {
 }
 
 /* =============================================================
- * 2. CHUYỂN ĐỔI CHỦ ĐỀ ĐA SẮC (THEME PALETTE SWITCHER)
- * =========================================================== */
-function initThemeSwitcher() {
-  const themeBtns = document.querySelectorAll('.theme-btn');
-  const savedTheme = localStorage.getItem('vtd_portfolio_theme') || 'aurora';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-
-  themeBtns.forEach(btn => {
-    if (btn.getAttribute('data-theme') === savedTheme) {
-      btn.classList.add('active');
-    }
-    btn.addEventListener('click', () => {
-      themeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const theme = btn.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('vtd_portfolio_theme', theme);
-      showToast(`Đã chuyển sang chủ đề: <b>${btn.getAttribute('title')}</b> ✨`);
-      if (soundEnabled) playSciFiSound('toggle');
-    });
-  });
-}
-
-/* =============================================================
- * 3. 3D TILT PHYSICS & SPOTLIGHT HOVER TRÊN THẺ CARD
+ * 2. 3D TILT PHYSICS & SPOTLIGHT HOVER TRÊN THẺ CARD
  * =========================================================== */
 function init3DTilt() {
   const tiltCards = document.querySelectorAll('.card, .timeline-card, .stat-badge, .contact-card');
@@ -329,118 +303,7 @@ function initProjectModals() {
 }
 
 /* =============================================================
- * 7. TERMINAL TƯƠNG TÁC DÀNH CHO DEVELOPER (DEVELOPER CLI)
- * =========================================================== */
-function initInteractiveTerminal() {
-  const terminalInput = document.getElementById('terminalInput');
-  const terminalOutput = document.getElementById('terminalOutput');
-  const terminalBody = document.querySelector('.terminal-body');
-  if (!terminalInput || !terminalOutput) return;
-
-  const commands = {
-    help: `
-Danh sách lệnh có thể sử dụng:
-  <span class="cmd-highlight">about</span>      : Giới thiệu tóm tắt về Vũ Tùng Dương
-  <span class="cmd-highlight">skills</span>     : Danh sách các công nghệ nổi bật
-  <span class="cmd-highlight">projects</span>   : Các dự án tiêu biểu đã hoàn thành
-  <span class="cmd-highlight">contact</span>    : Kênh liên hệ trực tiếp
-  <span class="cmd-highlight">metrics</span>    : Chỉ số đo lường hiệu quả kỹ thuật
-  <span class="cmd-highlight">theme &lt;name&gt;</span>: Đổi theme (aurora, cyberpunk, emerald)
-  <span class="cmd-highlight">sound</span>      : Bật / Tắt âm thanh Sci-Fi
-  <span class="cmd-highlight">clear</span>      : Xóa trắng màn hình dòng lệnh
-`,
-    about: `
-Họ và tên  : Vũ Tùng Dương
-Chuyên môn : Frontend Developer & UI Enthusiast / AI & Deep Learning
-Định hướng : Xây dựng giao diện web đỉnh cao, chuẩn mực và thông minh.
-Học vấn    : Sinh viên CNTT đam mê công nghệ cao.
-`,
-    skills: `
-[Ngôn ngữ]   : C#, Python, SQL
-[Web/Backend]: ASP.NET Core MVC, Entity Framework Core, HTML5/CSS3
-[Trí tuệ AI] : PyTorch, UNet++, EfficientNet-B4, OpenCV, Gradio
-[Tools/DB]   : SQL Server, MySQL, Git & GitHub, Docker, VS Code, Colab
-`,
-    projects: `
-1. AI Colon Polyp Detection (UNet++ • EfficientNet-B4 • Gradio UI • Acc 97.2%)
-2. AI Space Defender Game (Python 2D • Enemy AI State Machine • 60 FPS)
-3. FastFood Online Management System (ASP.NET Core MVC • SQL Server • EF Core)
-`,
-    contact: `
-Email    : vutungduong0@gmail.com
-GitHub   : https://github.com/vutungduong0-art
-LinkedIn : https://linkedin.com/in/dvdavincii
-Live Demo: https://vutungduong0-art.github.io/MyCV/
-`,
-    metrics: `
-[Performance]  : 98/100 (Google Lighthouse)
-[Accessibility]: 96/100 (WCAG 2.1 AA)
-[Best Practice]: 100/100
-[SEO Audit]    : 100/100
-[AI Accuracy]  : 97.2% IoU/Dice Score
-`
-  };
-
-  function printLine(html) {
-    const line = document.createElement('div');
-    line.className = 'terminal-line';
-    line.innerHTML = html;
-    terminalOutput.appendChild(line);
-    if (terminalBody) terminalBody.scrollTop = terminalBody.scrollHeight;
-  }
-
-  terminalInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const raw = terminalInput.value.trim();
-      terminalInput.value = '';
-      if (!raw) return;
-
-      printLine(`<span class="term-prompt">duong@portfolio:~$</span> ${raw}`);
-      const args = raw.toLowerCase().split(' ');
-      const cmd = args[0];
-
-      if (cmd === 'clear') {
-        terminalOutput.innerHTML = '';
-      } else if (cmd === 'theme') {
-        const targetTheme = args[1];
-        if (['aurora', 'cyberpunk', 'emerald'].includes(targetTheme)) {
-          document.documentElement.setAttribute('data-theme', targetTheme);
-          localStorage.setItem('vtd_portfolio_theme', targetTheme);
-          document.querySelectorAll('.theme-btn').forEach(b => {
-            b.classList.toggle('active', b.getAttribute('data-theme') === targetTheme);
-          });
-          printLine(`✓ Đã kích hoạt chủ đề: <b>${targetTheme}</b>`);
-        } else {
-          printLine(`Lỗi: Theme không hợp lệ. Hãy chọn: aurora, cyberpunk, hoặc emerald.`);
-        }
-      } else if (cmd === 'sound') {
-        const soundBtn = document.getElementById('soundToggleBtn');
-        if (soundBtn) soundBtn.click();
-        printLine(`Trạng thái âm thanh: <b>${soundEnabled ? 'BẬT' : 'TẮT'}</b>`);
-      } else if (commands[cmd]) {
-        printLine(commands[cmd]);
-      } else {
-        printLine(`Lệnh không nhận dạng được: <b>${cmd}</b>. Gõ <span class="cmd-highlight">help</span> để xem trợ giúp.`);
-      }
-
-      if (soundEnabled) playSciFiSound('click');
-    }
-  });
-
-  // Gắn lệnh cho các nút gợi ý terminal (Quick chips)
-  document.querySelectorAll('.term-quick-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cmd = btn.getAttribute('data-cmd');
-      terminalInput.value = cmd;
-      terminalInput.focus();
-      const enterEvent = new KeyboardEvent('keydown', { key: 'Enter' });
-      terminalInput.dispatchEvent(enterEvent);
-    });
-  });
-}
-
-/* =============================================================
- * 8. BỘ LỌC KỸ NĂNG THEO DANH MỤC
+ * 6. BỘ LỌC KỸ NĂNG THEO DANH MỤC
  * =========================================================== */
 function initSkillFilters() {
   const filterBtns = document.querySelectorAll('.skill-filter-btn');
