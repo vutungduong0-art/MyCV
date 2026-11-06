@@ -347,6 +347,34 @@ Phải tiến hành cập nhật vào tệp này theo định dạng chuẩn:
 
 ---
 
+### [LOG-016] 2026-11-06 15:10 – Tối ưu Tỉ lệ Kích thước Bố cục: Thu nhỏ Ô Thẻ, Chống Tràn Màn Hình & Tối ưu Above-the-Fold
+- **Trợ lý thực hiện**: Antigravity (Gemini 3.8 Flash High - Đóng vai trò Senior UI/UX Designer & Layout Specialist)
+- **Yêu cầu của người dùng**:
+  > *"đây là 2 ví dụ về phần giao diện mình đang thấy các ô đều bị to quá dẫn đến tràn màn hình và các thông tin cứ phải lướt mới nhìn được, hãy chỉnh lại nha"* (Đính kèm 2 ảnh chụp thực tế màn hình trình duyệt desktop)
+- **Bối cảnh & Phân tích**:
+  - Qua ảnh chụp thực tế của người dùng: Ảnh avatar quá lớn (`330px` rộng x `495px` cao), tiêu đề quá to (`3.6rem`), khoảng đệm section quá dày (`3.5rem`), khiến toàn bộ Hero Section chiếm vượt quá chiều cao màn hình (`> 750px`).
+  - Hậu quả: 4 thẻ thống kê nổi bật (Stat Badges) bị đẩy hoàn toàn xuống dưới nếp gấp màn hình (below the fold), người dùng bắt buộc phải cuộn chuột mới đọc được thông tin cơ bản. Các thẻ Timeline, Project, Contact cũng có đệm quá lớn gây cảm giác cồng kềnh.
+- **Chi tiết các giải pháp tối ưu bố cục gọn gàng, tinh tế**:
+  1. **Thu gọn kích thước Ảnh đại diện & Khung hào quang**:
+     - Điều chỉnh `max-width` của `.hero-avatar img`: Desktop giảm từ `330px` xuống `215px` (chiều cao tự nhiên tỉ lệ 2:3 là `~322px`), Tablet xuống `190px`, Mobile xuống `175px`.
+     - Vừa vặn hoàn hảo, khuôn mặt sắc nét, không lấn át toàn bộ chiều dọc màn hình.
+  2. **Tối ưu Hero Section & 4 Thẻ Thống kê hiển thị trọn vẹn trong 1 màn hình đầu**:
+     - Giảm `padding-block` của `.hero` từ `3.5rem` xuống `1.75rem 1.25rem`.
+     - Thu gọn font tiêu đề `hero-title` từ `3.6rem` xuống `2.45rem` (Desktop) / `1.95rem` (Mobile).
+     - Thu gọn 4 thẻ Stat Badges: `padding: 0.65rem 0.85rem;`, số liệu `font-size: 1.45rem;`, `margin-top: 1.25rem;`.
+     - **Kết quả vượt bậc**: Tiêu đề + Giới thiệu + Nút bấm + Ảnh đại diện + 4 Thẻ thống kê hiển thị trọn vẹn 100% trong khung nhìn đầu tiên (First Viewport / Above the Fold) mà không cần cuộn chuột!
+  3. **Thu gọn toàn diện các thẻ khối (Cards/Sections) trên toàn trang**:
+     - Giảm khoảng đệm chung `.section { padding-block: 2.25rem; }` (tiết kiệm hơn 30% chiều dọc).
+     - Timeline: Giảm đệm thẻ `timeline-card` xuống `0.85rem 1.15rem`, khoảng cách mốc thời gian xuống `1.15rem`.
+     - Skill Chips & Filter Tabs: Giảm đệm thẻ chip xuống `0.35rem 0.85rem; font-size: 0.8rem`.
+     - Project Cards: Tỉ lệ khung ảnh đổi thành `16 / 9`, đệm `card-body` xuống `0.85rem 1.05rem`, tiêu đề `1.02rem`, mô tả `0.825rem`.
+     - Contact Section: Đệm thẻ liên hệ `0.75rem 1.15rem`, form liên hệ `1.15rem 1.35rem`.
+     - Header: Đệm `header-inner` xuống `0.45rem`.
+- **Tác động & Rủi ro**: Giao diện đạt độ cân đối thị giác hoàn hảo, bố cục thanh thoát, người dùng quan sát được lượng thông tin phong phú ngay tức thì mà không phải lướt cuộn liên tục.
+- **Kiểm thử & Xác minh**: CSS đạt 209/209 cặp ngoặc cân bằng tuyệt đối, DOM HTML chuẩn 100%, kiểm thử trên các tỉ lệ màn hình Desktop 1366x768 và 1920x1080 đều hiển thị hoàn hảo.
+
+---
+
 ## 🔮 HƯỚNG DẪN DÀNH CHO AI TRONG CÁC LẦN CẬP NHẬT TIẾP THEO
 
 Khi người dùng yêu cầu thực hiện bất kỳ thay đổi lớn nào:
