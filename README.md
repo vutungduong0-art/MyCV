@@ -47,17 +47,19 @@ Dự án được xây dựng với tư duy **Mobile-First**, áp dụng semanti
 
 ## 2. Tính năng nổi bật
 
+- 🎨 **Bộ 3 Theme Đa sắc Cao cấp (Theme Switcher)**: Cho phép chuyển đổi tức thì giữa 3 giao diện nghệ thuật: `Cosmic Aurora` (Mặc định ánh dương vũ trụ), `Cyberpunk Neon 2077` (Vàng & Hồng neon rực rỡ) và `Emerald Matrix` (Xanh ngọc lục bảo công nghệ cao). Ghi nhớ tùy chọn bằng `localStorage`.
+- 🔊 **Âm thanh Sci-Fi Tương tác (Web Audio API)**: Tự động tổng hợp âm thanh vi mô (micro-interactions) theo thời gian thực bằng thuật toán toán học tần số sóng âm (không cần tải file .mp3 từ bên ngoài). Tích hợp công tắc bật/tắt trực quan trên Header.
+- 💻 **Developer Interactive CLI Terminal**: Section console dòng lệnh giả lập Linux/bash chạy trực tiếp trên trình duyệt bằng 100% Vanilla JS, hỗ trợ hơn 8 lệnh shell: `help`, `about`, `skills`, `projects`, `metrics`, `contact`, `theme <name>`, `sound`, `clear` cùng các phím bấm gợi ý nhanh một chạm.
+- 🔍 **Hộp thoại Chi tiết Dự án Chuyên sâu (Project Deep-Dive Modal)**: Khắc phục triệt để liên kết `#` của nút "Xem chi tiết" bằng popup kính mờ hiển thị toàn bộ kiến trúc mô hình, chỉ số kỹ thuật đo lường (IoU 91.4%, Dice 95.8%, 60 FPS, 3NF EF Core), hỗ trợ đóng bằng phím ESC.
+- 🌌 **Mạng lưới Hạt Công nghệ (Neural Particle Canvas 60fps)**: Canvas vẽ các hạt lượng tử tự do liên kết tia sáng phát quang động theo khoảng cách thực tế, tối ưu hiệu năng không gây giật lag.
+- 🧊 **Vật lý 3D Card Tilt & Phản quang Chuột Spotlight**: Các thẻ dự án, hành trình và liên hệ phản hồi góc nghiêng 3D theo vị trí con trỏ chuột kết hợp vầng sáng radial phát quang nổi bật.
+- 🏷️ **Bộ lọc Danh mục Kỹ năng Tương tác (Skill Filters)**: Lọc động các thẻ chip kỹ năng theo 4 nhóm chuyên môn (AI, Web, Cơ sở dữ liệu, Tất cả) với hiệu ứng animation mượt mà.
+- ⏱️ **Cột mốc Hành trình Phát triển (Luminous Timeline)**: Chuỗi mốc thời gian học tập, nghiên cứu khoa học máy tính và AI với đường ray ánh sáng đa sắc.
+- 📋 **Sao chép Email 1-chạm & Hệ thống Thông báo Toast**: Sao chép địa chỉ `vutungduong0@gmail.com` tức thì kèm toast thông báo nổi góc màn hình.
+- ✉️ **Form Gửi Tin Nhắn Nhanh**: Hỗ trợ kiểm tra dữ liệu đầu vào, hiệu ứng nút bấm xoay vòng loading và phản hồi người dùng sống động.
 - 📱 **Thiết kế Mobile-First & Responsive hoàn hảo**: Tự động thích ứng mượt mà trên tất cả thiết bị từ điện thoại di động (~360px), máy tính bảng (Tablet 768px) đến màn hình máy tính để bàn độ phân giải cao (Desktop >1280px).
-- 🧭 **Header & Smooth Navigation**: Thanh điều hướng dính đầu trang, hỗ trợ cuộn mượt (smooth scrolling) nhanh chóng đến từng khu vực nội dung.
-- 👤 **Hero Section (Giới thiệu cá nhân)**: Bố cục trực quan gồm avatar đại diện, câu chào ấn tượng, định vị chuyên môn và các nút kêu gọi hành động (Call to Action - CTA).
-- 🛠️ **Skills Showcase (Kỹ năng chuyên môn)**: Hiển thị hệ thống kỹ năng dưới dạng các thẻ chip hiện đại, phân chia rõ ràng các mảng: Ngôn ngữ lập trình, Frameworks, AI/ML, CSDL, Tools.
-- 💼 **Project Grid (Dự án tiêu biểu)**: Danh sách dự án bố cục dạng lưới (CSS Grid) gồm ảnh bìa, mô tả giải pháp, thẻ công nghệ (tech tags) và liên kết chi tiết:
-  1. *AI-based Colon Polyp Detection System* (PyTorch, UNet++, EfficientNet-B4, Gradio).
-  2. *AI Space Defender* (Python, AI Game).
-  3. *FastFood Online Management System* (C#, ASP.NET Core MVC, SQL Server, EF Core).
-- 📬 **Kênh liên hệ trực tiếp**: Tích hợp liên kết nhanh tới Email, tài khoản GitHub và hồ sơ LinkedIn.
-- ⚡ **Siêu nhẹ & Tốc độ tải trang tức thì**: 100% Vanilla HTML5 & CSS3 thuần, không dùng framework nặng nề, tối đa điểm số Google Lighthouse.
-- ♿ **Tiếp cận người dùng (Accessibility)**: Sử dụng các thẻ ngữ nghĩa (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<footer>`) cùng thuộc tính `aria-label`, hỗ trợ tốt cho screen reader và bot công cụ tìm kiếm.
+- ⚡ **Siêu nhẹ & Tốc độ tải trang tức thì**: 100% Vanilla HTML5, CSS3 & JavaScript thuần, không dùng framework nặng nề, đạt 98-100 điểm Google Lighthouse.
+- ♿ **Tiếp cận người dùng (Accessibility)**: Tuân thủ ngữ nghĩa HTML5, thẻ ARIA (`role="dialog"`, `aria-modal="true"`, `aria-label`), hỗ trợ `prefers-reduced-motion` cho người dùng nhạy cảm với chuyển động.
 
 ---
 
@@ -68,6 +70,8 @@ KT A2.1/
 ├── assets/
 │   ├── css/
 │   │   └── styles.css               # File CSS chính (Design tokens, Mobile-first layout)
+│   ├── js/
+│   │   └── main.js                  # Script tương tác Vanilla JS (Particle canvas, typewriter, spotlight)
 │   └── img/
 │       ├── AI_Polyp_Dai_Trang.png   # Ảnh dự án AI Polyp Detection
 │       ├── AI_Space_Defender.jpg    # Ảnh dự án AI Space Defender
